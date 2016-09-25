@@ -1,0 +1,162 @@
+\documentclass[final,1p,12pt]{elsarticle}
+
+%% The amssymb package provides various useful mathematical symbols
+\usepackage{amssymb}
+%% The amsthm package provides extended theorem environments
+\usepackage{amsthm}
+%% The amsmath package provides binomial notation for us
+\usepackage{amsmath}
+%% The parcolumns package provides multiple columns for examples.
+\usepackage{parcolumns}
+% The tikz package provides drawings for Combinations set notation (Venn Diagram).
+\usepackage{tikz}
+%% Removes the wonky "Preprint Submitted to Elsevier" and adds a front-page footer. 
+\makeatletter
+\def\ps@pprintTitle{%
+ \let\@oddhead\@empty
+ \let\@evenhead\@empty
+ \def\@oddfoot{
+    \hspace*{\fill}
+    {Compiled by John Oss} \hfill {\thepage} \hfill{\@journal\today}
+    \hspace*{\fill}}%
+ \let\@evenfoot\@oddfoot}
+\makeatother
+
+%% Definitions
+
+\newtheorem{definition}{Definition}
+\newtheorem{example}{Example}
+
+\begin{document}
+
+\begin{frontmatter}
+    \title{Exam Notes for MDM4UI}
+    \include{abstract}
+\end{frontmatter}
+
+%% main text
+
+\section{Permutations}
+Permutations are the arrangements of objects in a set order. 
+For instance, how many ways can you rearrange the letters in the word "APPLE", 
+or how many ways can you bring 4 people out of 20 friends to a party.
+
+    \subsection{Factorial Notation}
+    Often in permutations, we need to multiply descending consecutive numbers. Since these numbers
+    are descending and not ascending, we can safely assume that \textbf{every factorial must be positive}. 
+    For instance,  $5\times4\times3\times2\times1$ can often be simplified and written as \textbf{5!}, or 5 factorial.\\
+    The general rule for factorial notation is: \[ n! = n\times(n-1)\times(n-2)\cdots3\times2\times1 \]\\
+    The exception to this rule is 0!, which in this case would be $0! = 1$, which would follow the same thinking as $n^0=0$.
+    
+    \subsection{Rule of Product and Rule of Sum}
+    How many different results can one get from flipping a coin 3 times? You have 2 possibilities, heads or tails, and you flip it 3 times. Essentially, you have three groups of two, or $2\times3$ different results, which turns out to be $6$ different possible results. This is called the \emph{Fundamental Rule of Product} or the \emph{Counting Principle}
+    \begin{definition}
+        The Rule of Product states that if the 1st action can be performed in n ways, and the 2nd action can be performed in m ways.
+        They can be performed together in $n\times m$ ways. 
+    \end{definition}
+    \clearpage
+    What happens if the actions cannot be performed together? Such as which car to buy? In that case we have another rule, known as the \emph{Rule of Sum}.
+    \begin{definition}
+        The Rule of Sum states that if the 1st action can be performed in n ways, and the 2nd action can be performed in m ways, and these actions cannot occur together, then there are $n+m$ ways for either of the actions to occur.
+    \end{definition}
+    
+    \subsection{N-Arrangements}
+    Let's say you have 5 people, and you need to arrange them in a line.
+    You put one person in the first spot, and now you have 4 left. Repeat this until you are left with one person, which fits into the last spot. You can express this mathematically by writing out $5\times4\times3\times2\times1$ or $5$ factorial.\\
+    This is quite similar to the Rule of Product as:
+    \begin{enumerate}
+        \item Each placement is a choice
+        \item The number of choices is reduced with each previous action. 
+    \end{enumerate}
+    A permutation of \emph{n} objects is an arrangement of the objects in a \textbf{definite order}. This can be expressed with permutation notation, shown below where P(n,n) equals the number of ways to permute n objects.
+    \[P(n,n) = n!\]
+    This equation will only work when the number of spaces to occupy and the number of objects are equal. In other cases we'll have to use an r-arrangement.
+    
+    \subsection{R-Arrangements}
+    If you have more objects than places you can put the objects into, then we can use something called an r-arrangement. An r-arrangement is a permutation of \emph{n} objects taken \emph{r} at a time, as is shown below.
+    \[P(n,r) = \frac{n!}{(n-r)!}\]
+    Where $P(n,r)$ equals the total number of arrangements you have, divided by the number of unused objects. This is most commonly displayed on calculators as \emph{nPr}. For example you have 4 subjects, but you can only study two at a time. The equation for that would be $\frac{4!}{(4-2)!}=12\mbox{ combinations.}$ 
+    \clearpage
+    
+    \subsection{Permutations with Repeating Elements}
+    All previous examples will ONLY work with non-repeating elements, such as the letters in the word "MONTREAL", or 5 different books. They will definitely NOT work for questions with repeating elements, such as the word "FIJI". For all repeating elements we'll have to follow another rule shown below.
+    \begin{definition}
+        In general, the number of arrangements of \emph{n} objects of which \emph{a} of one kind are alike, and \emph{b} of one kind are alike and so forth is given by the expression below, Where the number of permutations can be found by dividing the total number of possible combinations by the repeating elements.   \[\frac{n!}{a!b!c!\cdots}\]
+    \end{definition}
+    
+    \subsection{Problem Solving with Permutations}
+    There are 3 methods for solving problems with permutations. They are called: the Indirect Method, the Case Method, and Circular Arrangements.
+    
+        \subsubsection{Indirect Method}
+        The indirect method involves taking all possibilities and subtracting those which are not wanted. For instance, say you have 3 people that need to sit at a table, but 2 of them don't want to sit beside each other. There is a step-by-step process that you can use for this question that is explained below.
+        \begin{enumerate}
+                \item Find all possible permutations (ex. P(3,3) )
+                \item Find all unwanted permutations (in this case when they are together)
+                \item Subtract the unwanted permutations from the wanted permutations.
+            \end{enumerate}
+        This can be written as: \[\mbox{\textbf{Desirable Permutations}} = \mbox{Total Permutations} - \mbox{Unwanted Permutations}\]
+    
+        \subsubsection{Case Method}
+        The Case Method involves breaking down the equation into manageable parts, then adding them to get the final solution. There is a step-by-step example problem in Section 1 of the appendix, along with an explanation of why, and how you manage the "breaking into parts" aspect.
+
+        \clearpage
+    
+        \subsubsection{Circular Arrangements}
+        Circular arrangements are no longer a part of the curriculum, and as such they will not be tested on, but they are still quite useful to know in niche cases. If you have seven people seated at a table, and they all move to their rights, their positions may have moved, but their order remains the same, think of it like a circle. Keep in mind that if there is some fixed point, the question just ends into a typical linear arrangement, with the equation simplifying to $1 \times (n-1)!$.
+        
+\section{Combinations}
+A Combination is a way of selecting objects (permuting) from a group, without the order being important. In essence, it is orderless permutations. Let $ABC$ be a permutation. In Section 1, we asserted that $ABC$ and $BAC$ are different, as their orders are different. In combinations, we assert that $ABC$ and $BAC$ are the same, as they contain the same objects, just in a different order.
+
+    \subsection{Introduction to Set Theory}
+    Set Theory involves the creation and manipulation of sets and their properties. A set is a collection of distinct objects in which their order does not matter. The objects in this set are called elements. If a set does not have any elements in it, we refer to it as a \emph{null set}, which is shown as $\emptyset$ or $(\emptyset)$. This null set is a subset of everything. If we want to describe a set containing elements, we must follow the example below.
+    \[X = \{a,b,c,d,e,f,\cdots,y,z\}\] 
+    If we wish to describe the number of elements in the set, we can say $n(X)$, where X represents the set, and n returns the number of elements in that set. In this case $n(X) = 26$, as set X contains all the letters of the alphabet. Sets are referred to differently when compared to other sets, as defined below.
+    \begin{definition}
+    Special Properties of Sets when Compared to Other Sets
+    \begin{enumerate}
+        \item If two sets have no elements in common they are called disjoint sets.
+        \item If two sets have all elements in common they are equal.
+        \item If all of elements of A are also in B then A is a subset of B $(A\subseteq B)$
+    \end{enumerate}
+    \end{definition}
+    \subsubsection{Universal Set and Complement Sets}
+    The set of all elements being considered is called \emph{universal set} and is always denoted by $S$. When referring to a set of all elements that are in the universal set, but \textbf{not in set A}, we call this the complement of $A$ or $A`$. For example: 
+    \[S = \{1,2,3,4\}, A = \{1,3\}, A`=\{2,4\}\]
+    \subsubsection{Unions and Intersections}
+    For two sets of A and B, the \textbf{union} of A and B or $A\cup B$, is the set of all elements in A or B, not including duplicates.
+    \[S = \{1,2,3,4\}, A = \{1,3\}, B =\{1,2\}, A\cup B=\{1,2,3\}\]
+    For two sets of A and B the \textbf{intersection} of A and B, $A\cap B$, is the set of all the elements that are in both set A and set B.
+    \[S = \{1,2,3,4\}, A = \{1,3\}, B =\{1,2\}, A\cap B=\{1\}\]
+    If you are ever having trouble remembering the difference between a union and an intersection just by symbols, remember that union looks like a cup, and intersection looks like a cap.
+    
+    \subsection{Introduction to Combinations}
+    A combination is a selection of r objects, from n distinct objects \emph{without regard for order}. The equation for solving combinations is written below.
+    \[C(n,r) = \frac{n!}{(n-r)!\times r!}\]
+    This equations finds all combinations by dividing number of objects, by the unused objects $(n-r)!$ and the order of the selected objects. This can be further simplified to:
+    \[C(n,r) = \frac{P(n,r)}{r!}\]
+    If order does not matter, the process is called a \emph{Combination}, whereas when order does matter, it is called a \emph{Permutation}. On your calculator, the formulae for combinations will be shown as \textbf{nCr}. If written out by hand, we will use the form:
+    \[
+        \binom{n}{r} = \frac{n!}{(n-r)!\times n!}
+    \]
+    Or simply \(\binom{n}{k}\).
+     
+%% This section will be for the appendix, containing extra practice questions, typically discussed in class, or questions that have been on tests as bonus, or other assorted challenging questions. 
+
+\clearpage\appendix
+\include{examples}
+%% References
+%%
+%% Following citation commands can be used in the body text:
+%% Usage of \cite is as follows:
+%%   \cite{key}         ==>>  [#]
+%%   \cite[chap. 2]{key} ==>> [#, chap. 2]
+%%
+
+%% Possible sections:
+%% \section{Practice Questions}
+%% \section{Practice Answers}
+
+\end{document}
+
+%%
+%% EOF
