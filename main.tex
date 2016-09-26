@@ -115,7 +115,11 @@ A Combination is a way of selecting objects (permuting) from a group, without th
     Special Properties of Sets when Compared to Other Sets
     \begin{enumerate}
         \item If two sets have no elements in common they are called disjoint sets.
-        \item If two sets have all elements in common they are equal.
+        \item If two sets have all elements 
+        
+        
+        
+        in common they are equal.
         \item If all of elements of A are also in B then A is a subset of B $(A\subseteq B)$
     \end{enumerate}
     \end{definition}
@@ -138,8 +142,50 @@ A Combination is a way of selecting objects (permuting) from a group, without th
     \[
         \binom{n}{r} = \frac{n!}{(n-r)!\times n!}
     \]
-    Or simply \(\binom{n}{k}\).
-     
+    Or simply \(\binom{n}{r}\).
+
+\section{Independent Study Units}
+
+    \subsection{Modelling with Matrices}
+    
+        \subsubsection{Intro to Matrices}
+        A matrix is a rectangular array of numbers that is used to organize data. If you are used to computer programming, you will recognize them as 2D arrays. If you are good with set notation, they are in essence, a set of sets. Matrices follow the format below:
+        $$X =
+        \begin{bmatrix}
+            a & b & c \\
+            d & e & f
+        \end{bmatrix}
+        $$
+        Matrices have various properties, and unique terms created to describe them. For instance, looking at the matrix above, we can safely say that $a$ in an entry, as defined below.
+        \begin{definition}
+            An entry in a matrix, refers to a number in a matrix.
+        \end{definition}
+        How did we figure out the number of entries in the matrix? Simple, we can use the matrix's \emph{dimensions} to figure that out.
+        \begin{definition}
+            Dimensions are the size of the matrix, described by the number of rows and columns. 
+        \end{definition}
+        We can use the formula $\text{Dimensions}=\text{Rows}\times\text{Columns}$ to solve for the dimensions, which also will equal the total number of entries in the matrix. In Matrix X above, we can determine the dimensions by multiplying the $3\times 2=6$, therefore we can state that Matrix X contains 6 entries.
+        
+        \subsubsection{Variations and Classifications of Matrices}
+        Matrices can be transformed, and compared to each other, much like sets.
+        \begin{definition}
+            A transpose matrix is a matrix obtained by interchanging the rows and columns. This is written as $X^{+}$. Shown below is Matrix X, and the transposed equivalent.
+            $$X =
+            \begin{bmatrix}
+                a & b & c \\
+                d & e & f
+            \end{bmatrix}
+            -> X^{+} =
+            \begin{bmatrix}
+                a & d \\
+                b & e \\
+                c & f
+            \end{bmatrix}
+            $$
+            
+        \end{definition}
+        
+        
 %% This section will be for the appendix, containing extra practice questions, typically discussed in class, or questions that have been on tests as bonus, or other assorted challenging questions. 
 
 \clearpage\appendix
