@@ -227,6 +227,14 @@ A Combination is a way of selecting objects (permuting) from a group, without th
                 D = R \times C
             \end{equation}
         \end{definition}
+        Matrix's entries are numbered in a way so that it is easy to refer to a specific entry. Capital letters are used for the names of matrices, and lowercase characters are used for the names of entries. Shown below are the entries named, with numbers instead of letters. The first character represents the y value, whereas the second represents the x value. In the equation below, $a_{13}$ represents the entry in row 1, column 3.
+        \begin{equation}
+            X =
+            \begin{bmatrix}
+                a_{11} & a_{12} & a_{13} \\
+                a_{21} & a_{22} & a_{23}
+            \end{bmatrix}
+        \end{equation}
         
         \subsubsection{Variations and Classifications of Matrices}
         Matrices can be transformed, and compared to each other, much like sets. The definitions of the variations and classifications of the matrices are listed below.
@@ -275,19 +283,49 @@ A Combination is a way of selecting objects (permuting) from a group, without th
         \begin{equation}%Column Matrix
             Z =
             \begin{bmatrix}
-                a&b&c\\
-                d&e&f\\
-                g&h&i
+                a & b & c\\
+                d & e & f\\
+                g & h & i
             \end{bmatrix}
         \end{equation}
         \end{definition}
         
-%% Appendix, containing extra practice questions, typically discussed in class, or questions that have been on tests as bonus, or other assorted challenging questions. 
-
         \subsubsection{Operations with Matrices}
+        Matrices may only be added or subtracted when they have the same dimensions. Adding matrices is done by adding entry by entry to the other matrix. $A_{12}$ will be added with $B_{12}$ and so forth. Shown below is a valid example of adding with matrices in which the entries are labeled to show proper addition:
+        \begin{equation}
+            \begin{bmatrix}
+                1_{11} & 3_{12} & 5_{13} \\
+                2_{21} & 4_{22} & 6_{23}
+            \end{bmatrix}
+            +
+            \begin{bmatrix}
+                5_{11} & 6_{12} & 1_{13} \\
+                4_{21} & 3_{22} & 2_{23}
+            \end{bmatrix}
+            =
+            \begin{bmatrix}
+                6_{11} & 9_{12} & 6_{13} \\
+                6_{21} & 7_{22} & 8_{23}
+            \end{bmatrix}
+        \end{equation}
         
-
+        They may also be multiplied by a coefficient, by multiplying the coefficient with every entry in the matrix. Shown below is a proper solution in which a matrix is multiplied by a coefficient, with entries labeled:
+         \begin{equation}
+         3
+            \begin{bmatrix}
+                1_{11} & 3_{12} & 5_{13} \\
+                2_{21} & 4_{22} & 6_{23}
+            \end{bmatrix}
+        =
+            \begin{bmatrix}
+                3_{11} & 9_{12} & 15_{13} \\
+                6_{21} & 12_{22} & 18_{23}
+            \end{bmatrix}
+        \end{equation}
+        
+    
 \clearpage\appendix
+%% Appendix, containing extra practice questions, typically discussed in class, or questions that have been on tests as bonus, or other assorted challenging questions.
 \include{examples}
 
 %% References
@@ -302,7 +340,7 @@ A Combination is a way of selecting objects (permuting) from a group, without th
 %% \section{Practice Questions}
 %% \section{Practice Answers}
 
-    \subsection{Google Sheets (ISU 2)}
+
     
 \end{document}
 
