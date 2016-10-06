@@ -44,18 +44,18 @@ or how many ways can you bring 4 people out of 20 friends to a party.
     \subsection{Factorial Notation}
     Often in permutations, we need to multiply descending consecutive numbers. Since these numbers
     are descending and not ascending, we can safely assume that \textbf{every factorial must be positive}. 
-    For instance,  $5\times4\times3\times2\times1$ can often be simplified and written as \textbf{5!}, or 5 factorial.\\
+    For instance,  $5\cdot4\cdot3\cdot2\cdot1$ can often be simplified and written as \textbf{5!}, or 5 factorial.\\
     The general rule for factorial notation is: 
     \begin{equation}%Factorial Equation
-        n! = n\times(n-1)\times(n-2)\cdots3\times2\times1
+        n! = n\cdot(n-1)\cdot(n-2)\cdots3\cdot2\cdot1
     \end{equation}
     The exception to this rule is 0!, which in this case would be $0! = 1$, which would follow the same thinking as $n^0=0$.%%Complete
     
     \subsection{Rule of Product and Rule of Sum}
-    How many different results can one get from flipping a coin 3 times? You have 2 possibilities, heads or tails, and you flip it 3 times. Essentially, you have three groups of two, or $2\times3$ different results, which turns out to be $6$ different possible results. This is called the \emph{Fundamental Rule of Product} or the \emph{Counting Principle}
+    How many different results can one get from flipping a coin 3 times? You have 2 possibilities, heads or tails, and you flip it 3 times. Essentially, you have three groups of two, or $2\cdot3$ different results, which turns out to be $6$ different possible results. This is called the \emph{Fundamental Rule of Product} or the \emph{Counting Principle}
     \begin{definition}
         The Rule of Product states that if the 1st action can be performed in n ways, and the 2nd action can be performed in m ways.
-        They can be performed together in $n\times m$ ways. 
+        They can be performed together in $n\cdot m$ ways. 
     \end{definition}
     \clearpage
     What happens if the actions cannot be performed together? Such as which car to buy? In that case we have another rule, known as the \emph{Rule of Sum}.
@@ -65,7 +65,7 @@ or how many ways can you bring 4 people out of 20 friends to a party.
     
     \subsection{N-Arrangements}
     Let's say you have 5 people, and you need to arrange them in a line.
-    You put one person in the first spot, and now you have 4 left. Repeat this until you are left with one person, which fits into the last spot. You can express this mathematically by writing out $5\times4\times3\times2\times1$ or $5$ factorial.\\
+    You put one person in the first spot, and now you have 4 left. Repeat this until you are left with one person, which fits into the last spot. You can express this mathematically by writing out $5\cdot4\cdot3\cdot2\cdot1$ or $5$ factorial.\\
     This is quite similar to the Rule of Product as:
     \begin{enumerate}
         \item Each placement is a choice
@@ -115,7 +115,7 @@ or how many ways can you bring 4 people out of 20 friends to a party.
     \clearpage
     
         \subsubsection{Circular Arrangements}
-        Circular arrangements are no longer a part of the curriculum, and as such they will not be tested on, but they are still quite useful to know in niche cases. If you have seven people seated at a table, and they all move to their rights, their positions may have moved, but their order remains the same, think of it like a circle. Keep in mind that if there is some fixed point, the question just ends into a typical linear arrangement, with the equation simplifying to $1 \times (n-1)!$.
+        Circular arrangements are no longer a part of the curriculum, and as such they will not be tested on, but they are still quite useful to know in niche cases. If you have seven people seated at a table, and they all move to their rights, their positions may have moved, but their order remains the same, think of it like a circle. Keep in mind that if there is some fixed point, the question just ends into a typical linear arrangement, with the equation simplifying to $1 \cdot (n-1)!$.
         
 \section{Combinations}
 A Combination is a way of selecting objects (permuting) from a group, without the order being important. In essence, it is orderless permutations. Let $ABC$ be a permutation. In Section 1, we asserted that $ABC$ and $BAC$ are different, as their orders are different. In combinations, we assert that $ABC$ and $BAC$ are the same, as they contain the same objects, just in a different order.
@@ -162,7 +162,7 @@ A Combination is a way of selecting objects (permuting) from a group, without th
     \subsection{Introduction to Combinations}
     A combination is a selection of r objects, from n distinct objects \emph{without regard for order}. The equation for solving combinations is written below.
     \begin{equation}
-        C(n,r) = \frac{n!}{(n-r)!\times r!}
+        C(n,r) = \frac{n!}{(n-r)!\cdot r!}
     \end{equation}
     This equations finds all combinations by dividing number of objects, by the unused objects $(n-r)!$ and the order of the selected objects. This can be further simplified to:
     \begin{equation}
@@ -170,7 +170,7 @@ A Combination is a way of selecting objects (permuting) from a group, without th
     \end{equation}
     If order does not matter, the process is called a \emph{Combination}, whereas when order does matter, it is called a \emph{Permutation}. On your calculator, the formulae for combinations will be shown as \textbf{nCr}. If written out by hand, we will use the form:
     \begin{equation}
-        \binom{n}{r} = \frac{n!}{(n-r)!\times n!}
+        \binom{n}{r} = \frac{n!}{(n-r)!\cdot n!}
     \end{equation}
     Or simply \(\binom{n}{r}\).
     
@@ -224,7 +224,7 @@ A Combination is a way of selecting objects (permuting) from a group, without th
         \begin{definition}Dimensions:
             These refer to the size of the matrix, described by the number of rows and columns. The formula below is used to solve for dimensions, where D is the result, $R$ is the rows, and $C$ is the columns.
             \begin{equation}
-                D = R \times C
+                D = R \cdot C
             \end{equation}
         \end{definition}
         Matrix's entries are numbered in a way so that it is easy to refer to a specific entry. Capital letters are used for the names of matrices, and lowercase characters are used for the names of entries. Shown below are the entries named, with numbers instead of letters. The first character represents the y value, whereas the second represents the x value. In the equation below, $a_{13}$ represents the entry in row 1, column 3.
@@ -294,32 +294,32 @@ A Combination is a way of selecting objects (permuting) from a group, without th
         Matrices may only be added or subtracted when they have the same dimensions. Adding matrices is done by adding entry by entry to the other matrix. $A_{12}$ will be added with $B_{12}$ and so forth. Shown below is a valid example of adding with matrices in which the entries are labeled to show proper addition:
         \begin{equation}
             \begin{bmatrix}
-                1_{11} & 3_{12} & 5_{13} \\
-                2_{21} & 4_{22} & 6_{23}
+                a_{11} & a_{12} & a_{13} \\
+                a_{21} & a_{22} & a_{23}
             \end{bmatrix}
             +
             \begin{bmatrix}
-                5_{11} & 6_{12} & 1_{13} \\
-                4_{21} & 3_{22} & 2_{23}
+                b_{11} & b_{12} & b_{13} \\
+                b_{21} & b_{22} & b_{23}
             \end{bmatrix}
             =
             \begin{bmatrix}
-                6_{11} & 9_{12} & 6_{13} \\
-                6_{21} & 7_{22} & 8_{23}
+                (a+b)_{11} & (a+b)_{12} & (a+b)_{13} \\
+                (a+b)_{21} & (a+b)_{22} & (a+b)_{23}
             \end{bmatrix}
         \end{equation}
         
         They may also be multiplied by a coefficient, by multiplying the coefficient with every entry in the matrix. Shown below is a proper solution in which a matrix is multiplied by a coefficient, with entries labeled:
          \begin{equation}
-         3
+         x
             \begin{bmatrix}
-                1_{11} & 3_{12} & 5_{13} \\
-                2_{21} & 4_{22} & 6_{23}
+                y_{11} & y_{12} & y_{13} \\
+                y_{21} & y_{22} & y_{23}
             \end{bmatrix}
         =
             \begin{bmatrix}
-                3_{11} & 9_{12} & 15_{13} \\
-                6_{21} & 12_{22} & 18_{23}
+                xy_{11} & xy_{12} & xy_{13} \\
+                xy_{21} & xy_{22} & xy_{23}
             \end{bmatrix}
         \end{equation}
         
