@@ -32,7 +32,9 @@
 %% Header
 \begin{frontmatter}
     \title{Exam Notes for MDM4UI}
-    \include{abstract}
+    \begin{abstract}
+        Notes for all topics taught in MDM4UI (Data Management) from the winter term of the 2016-2017 school year at GCI.  Please refer to the appendix for a walkthrough of example questions that will probably be on the exam. Sorry for the formatting. I'm not quite done yet.
+    \end{abstract}
 \end{frontmatter}
 
 %% Body 
@@ -290,7 +292,7 @@ A Combination is a way of selecting objects (permuting) from a group, without th
         \end{equation}
         \end{definition}
         
-        \subsubsection{Operations with Matrices}
+        \subsubsection{Basic Operations with Matrices}
         Matrices may only be added or subtracted when they have the same dimensions. Adding matrices is done by adding entry by entry to the other matrix. $A_{12}$ will be added with $B_{12}$ and so forth. Shown below is a valid example of adding with matrices in which the entries are labeled to show proper addition:
         \begin{equation}
             \begin{bmatrix}
@@ -323,10 +325,51 @@ A Combination is a way of selecting objects (permuting) from a group, without th
             \end{bmatrix}
         \end{equation}
         
+        \subsubsection{Advanced Operations with Matrices}
+        Matrices may also be multiplied with other matrices, yet you must follow certain rules. Let's say we have Matrix A and Matrix B as shown below. To multiply, we need to make sure the \emph{inner dimensions} are the same. We know that Matrix A's dimensions are $3 \cdot 2$, whereas for Matrix B, they are $2 \cdot 3$. Since we know this, we can find the \emph{inner dimensions}. The \emph{inner dimensions}, equals the columns of Matrix A and the rows of Matrix B. In this case, that would work out to be $3$ and $3$. Since they are the same, we are allowed to multiply these matrices. 
+        \begin{equation}%Demonstrating Matrices. 
+            A =
+            \begin{bmatrix}
+                a & b & c\\
+                d & e & f\\
+            \end{bmatrix}
+            B = 
+            \begin{bmatrix}
+                u & v\\
+                w & x\\
+                y & z
+            \end{bmatrix}
+        \end{equation}
+        Next, the rows of Matrix A times the columns of Matrix B, also known as the \emph{outer dimensions}, will give us the dimensions of the resultant matrix. Since Matrix A has two rows, and Matrix B has two columns, our resultant Matrix will possess the dimensions $2\cdot2$. Shown below is the updated equation. 
+        \begin{equation}
+            \begin{bmatrix}
+                a & b & c\\
+                d & e & f\\
+            \end{bmatrix}
+        \cdot
+            \begin{bmatrix}
+                u & v\\
+                w & x\\
+                y & z
+            \end{bmatrix}
+        =
+            \begin{bmatrix}
+                ?&?\\
+                ?&?
+            \end{bmatrix}
+        \end{equation}
+        Multiplying them is a bit strange at first, because to do it, we multiply row by row. Starting at the first row in Matrix A, we can see we have $a_{11},b_{12},c_{13}$ as our values, with their locations being labeled for convenience.  We must multiply these values each column in Matrix B, starting with the values $u_{11},w_{21},y_{31}$. To find entry (1,1) we can use the formula shown below, Where E represents the entry, and r represents a row in Matrix A (with xy values) and c represents a column in Matrix B.
+        \begin{equation}
+            E_{11} = r_{11} \cdot c_{11}  +  r_{12} \cdot c_{21}  +   r_{13} \cdot c_{31}
+        \end{equation}
+        
+        
     
 \clearpage\appendix
 %% Appendix, containing extra practice questions, typically discussed in class, or questions that have been on tests as bonus, or other assorted challenging questions.
-\include{examples}
+
+%% Currently commented out as it is horribly neglected.
+%%\include{examples}
 
 %% References
 %%
