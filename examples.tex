@@ -50,21 +50,19 @@
     \subsection{Combinations}
     
         \subsubsection{Set Theory}
-        
-    \clearpage
     
         \subsubsection{Intro to Combinations}
             
             \begin{example}
                 A committee of 4 people is chosen from 10 students, 6 parents, and 10 teachers. Order does not matter. How many ways can we make the committee if there are a) no restrictions, b) At least one teacher on the committee or c) Exactly three students on the committee.
             \end{example}
-                \textbf{a) No restrictions:}
-                 We can assume that this is a combination, as there are no restrictions other than order does not matter. Therefore we only need to fill in the combination equation, which turns out to be C(26,4). 
-                 $$\binom{26}{4} = 14950$$
-                 \textbf{b) At least one teacher.}
-                 There are two ways to handle this question, we can solve it either directly, or indirectly. In this example, I will choose indirectly. In this case, we want every solution with a teacher in it, and do not want the solution with zero teachers. Therefore we must subtract the unwanted solutions from all the solutions. This would work out to be:
-                 $$\binom{26}{4} - \binom{10}{0}\cdot\binom{16}{4} = 13130$$
-                 \textbf{c) Exactly three students.}
-                 For this question, we are forced to do it one way and one way only, as the question refers to \emph{exactly three} students. To start we must have 3 students on the committee, and then since we have one space left on the committee, we must fill that spot with someone who \emph{IS NOT} a student, as that would ruin our "exactly three" need. This works out to be:
-                 $$\binom{10}{3}\cdot\binom{24-10}{1} = 1680$$
+            \textbf{a) No restrictions:}\\
+            We can assume that this is a combination, as there are no restrictions other than order does not matter. Therefore we only need to fill in the combination equation, which turns out to be C(26,4). 
+            $$\binom{26}{4} = 14950$$
+            \textbf{b) At least one teacher.}
+            There are two ways to handle this question, we can solve it either directly, or indirectly. In this example, I will choose indirectly. In this case, we want every solution with a teacher in it, and do not want the solution with zero teachers. Therefore we must subtract the unwanted solutions from all the solutions. This would work out to be:
+            $$\binom{26}{4} - \binom{10}{0}\cdot\binom{16}{4} = 13130$$
+            \textbf{c) Exactly three students.}
+            For this question, we are forced to do it one way and one way only, as the question refers to \emph{exactly three} students. To start we must have 3 students on the committee, and then since we have one space left on the committee, we must fill that spot with someone who \emph{IS NOT} a student, as that would ruin our "exactly three" need. This works out to be:
+            $$\binom{10}{3}\cdot\binom{24-10}{1} = 1680$$
         
