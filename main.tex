@@ -120,7 +120,9 @@ or how many ways can you bring 4 people out of 20 friends to a party.
         Circular arrangements are no longer a part of the curriculum, and as such they will not be tested on, but they are still quite useful to know in niche cases. If you have seven people seated at a table, and they all move to their rights, their positions may have moved, but their order remains the same, think of it like a circle. Keep in mind that if there is some fixed point, the question just ends into a typical linear arrangement, with the equation simplifying to $1 \cdot (n-1)!$.
        
 \section{Combinations}
- A Combination is a way of selecting objects (permuting) from a group, without the order being important. In essence, it is orderless permutations. Let $ABC$ be a permutation. In Section 1, we asserted that $ABC$ and $BAC$ are different, as their orders are different. In combinations, we assert that $ABC$ and $BAC$ are the same, as they contain the same objects, just in a different order.
+
+    \subsection{What are Combinations?}
+     A Combination is a way of selecting objects (permuting) from a group, without the order being important. In essence, it is orderless permutations. Let $ABC$ be a permutation. In Section 1, we asserted that $ABC$ and $BAC$ are different, as their orders are different. In combinations, we assert that $ABC$ and $BAC$ are the same, as they contain the same objects, just in a different order.
 
     \subsection{Set Theory}
     Set Theory involves the creation and manipulation of sets and their properties. A set is a collection of distinct objects in which their order does not matter. The objects in this set are called elements. If a set does not have any elements in it, we refer to it as a \emph{null set}, which is shown as $\emptyset$ or $(\emptyset)$. This null set is a subset of everything. If we want to describe a set containing elements, we must follow the example below.
@@ -220,10 +222,35 @@ or how many ways can you bring 4 people out of 20 friends to a party.
         P(A) = \frac{n(A)}{n(S)}
     \end{equation*}
     Since the number of desired outcomes will never be greater than the number of total outcomes, we'll always have a decimal between 0 (0\%) and 1 (100\%), which we can convert to a percentage (ex. $\frac{1}{4}=0.25=25\%$), though typically we'll simply leave it as a reduced version of the fraction.
+    
+    \subsection{Mutually Exclusive Events and Non-Mutually Exclusive Events}
+    Mutually Exclusive events are events that have zero overlap with other events. Recall the Venn Diagram of Sets in The Combinations section. Assume A and B are both events. To find the probability of either of them happening, we'll have to remember the equation:
+    \begin{equation*}
+        n(A\cup B) = n(A) + n(B)
+    \end{equation*}
+    This equation finds all the ways A or B can happen, with zero overlap. The problem with this equation is that it only finds the number of wanted outcomes. Remember, to find the probability of something, we find the wanted outcomes, and divide it by all of the possible outcomes. After this, our equation will look like this:
+    \begin{equation*}
+        \frac{n(A \cup B}{n(S)} = \frac{n(A) + n(B)}{n(S)}
+    \end{equation*}
+    Which reduces to:
+    \begin{equation*}
+        P(A\cup B) = P(A) + P(B)
+    \end{equation*}
+    For non-mutually exclusive events, we must instead use a different equation, more accurate to the one we've discussed in the Sets Unit. Following the same logic we used earlier, our equation works out to:
+    \begin{equation*}
+        P(A\cup B) = P(A) + P(B) - P(A\cap B)
+    \end{equation*}
+    Where $P(A\cap B)$ equals the probability of both of those events occurring.
 
+    \subsection{Independent Probability}
+    When two events occur at the same time, or one after another with no effect on each other, they are called Independent Events. If you roll a die, then select a card, this would be independent, as the outcomes don't affect each other. If you think of this in terms of sets once again. So solve an Independent Probability question, we have to find the probability of A and B, and to do that we'll use the equation below.
+    \begin{equation*}
+        P(A\cap B) = P(A) \cdot P(B)
+    \end{equation*}
+    
 \section{Independent Study Units}
 
-    \subsection{Modelling with Matrices (ISU 1)}
+    \subsection{Modelling with Matrices}
     
         \subsubsection{Intro to Matrices}
         A matrix is a rectangular array of numbers that is used to organize data. If you are used to computer programming, you will recognize them as 2D arrays. If you are good with set notation, they are in essence, a set of sets. Matrices follow the format below:
@@ -235,8 +262,8 @@ or how many ways can you bring 4 people out of 20 friends to a party.
             \end{bmatrix}
         \end{equation*}
         Matrices have various properties, and unique terms created to describe them. For instance, looking at the matrix above, we can safely say that $a$ in an entry, as defined below.
-        \begin{definition}Entry:
-            An entry refers to a number in a matrix.
+        \begin{definition}
+            Entry: An entry refers to a number in a matrix.
         \end{definition}
         How did we figure out the number of entries in the matrix? Simple, we can use the matrix's \emph{dimensions} to figure that out.
         \begin{definition}Dimensions:
@@ -342,13 +369,7 @@ or how many ways can you bring 4 people out of 20 friends to a party.
         \end{equation*}
         
         \subsubsection{Multiplying Matrices Together}
-        Matrices may also be multiplied with other matrices, yet you must follow certain rules.
-        Let's say we have Matrix A and Matrix B as shown below.
-        To multiply, we need to make sure the \emph{inner dimensions} are the same.
-        We know that Matrix A's dimensions are $3 \cdot 2$, whereas for Matrix B, they are $2 \cdot 3$.
-        Since we know this, we can find the \emph{inner dimensions}.
-        The \emph{inner dimensions}, equals the columns of Matrix A and the rows of Matrix B. 
-        In this case, that would work out to be $3$ and $3$. Since they are the same, we are allowed to multiply these matrices. 
+        Matrices may also be multiplied with other matrices, yet to do so we must follow certain rules. Let's say we have Matrix A and Matrix B as shown below. To multiply, we need to make sure the \emph{inner dimensions} are the same. We know that Matrix A's dimensions are $3 \cdot 2$, whereas for Matrix B, they are $2 \cdot 3$. Since we know this, we can find the \emph{inner dimensions}. The \emph{inner dimensions}, equals the columns of Matrix A and the rows of Matrix B. In this case, that would work out to be $3$ and $3$. Since they are the same, we are allowed to multiply these matrices. 
         \begin{equation*}%Demonstrating Matrices. 
             A =
             \begin{bmatrix}
