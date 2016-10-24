@@ -33,7 +33,9 @@
 \begin{frontmatter}
     \title{Exam Notes for MDM4UI}
     \begin{abstract}
-        Notes for all topics taught in MDM4UI (Data Management) from the winter term of the 2016-2017 school year at GCI.  Please refer to the appendix for a walk-through of example questions that will probably be on the exam. Sorry for the formatting. I'm not quite done yet.
+        Notes for all topics taught in MDM4UI (Data Management) from the winter term of the 2016-2017 school year at GCI.  
+        Please refer to the appendix for a walk-through of example questions that will probably be on the exam. 
+        Sorry for the formatting. I'm not quite done yet.
     \end{abstract}
 \end{frontmatter}
 
@@ -44,17 +46,20 @@ For instance, how many ways can you rearrange the letters in the word "APPLE",
 or how many ways can you bring 4 people out of 20 friends to a party.
 
     \subsection{Factorial Notation}
-    Often in permutations, we need to multiply descending consecutive numbers. Since these numbers
-    are descending and not ascending, we can safely assume that \textbf{every factorial must be positive}. 
+    Often in permutations, we need to multiply descending consecutive numbers.
+    Since these numbers are descending and not ascending, we can safely assume that \textbf{every factorial must be positive}. 
     For instance,  $5\cdot4\cdot3\cdot2\cdot1$ can often be simplified and written as \textbf{5!}, or 5 factorial.\\
     The general rule for factorial notation is: 
     \begin{equation*}%Factorial Equation
         n! = n\cdot(n-1)\cdot(n-2)\cdots3\cdot2\cdot1
     \end{equation*}
-    The exception to this rule is 0!, which in this case would be $0! = 1$, which would follow the same thinking as $n^0=0$.%%Complete
+    The exception to this rule is 0!, which in this case would be $0! = 1$, which would follow the same thinking as $n^0=0$.
     
     \subsection{Rule of Product and Rule of Sum}
-    How many different results can one get from flipping a coin 3 times? You have 2 possibilities, heads or tails, and you flip it 3 times. Essentially, you have three groups of two, or $2\cdot3$ different results, which turns out to be $6$ different possible results. This is called the \emph{Fundamental Rule of Product} or the \emph{Counting Principle}
+    How many different results can one get from flipping a coin 3 times?
+    You have 2 possibilities, heads or tails, and you flip it 3 times.
+    Essentially, you have three groups of two, or $2\cdot3$ different results, which turns out to be $6$ different possible results.
+    This is called the \emph{Fundamental Rule of Product} or the \emph{Counting Principle}
     \begin{definition}
         The Rule of Product states that if the 1st action can be performed in n ways, and the 2nd action can be performed in m ways.
         They can be performed together in $n\cdot m$ ways. 
@@ -66,27 +71,36 @@ or how many ways can you bring 4 people out of 20 friends to a party.
     
     \subsection{N-Arrangements}
     Let's say you have 5 people, and you need to arrange them in a line.
-    You put one person in the first spot, and now you have 4 left. Repeat this until you are left with one person, which fits into the last spot. You can express this mathematically by writing out $5\cdot4\cdot3\cdot2\cdot1$ or $5$ factorial.\\
+    You put one person in the first spot, and now you have 4 left. Repeat this until you are left with one person, which fits into the last spot.
+    You can express this mathematically by writing out $5\cdot4\cdot3\cdot2\cdot1$ or $5$ factorial.\\
     This is quite similar to the Rule of Product as:
     \begin{enumerate}
         \item Each placement is a choice
         \item The number of choices is reduced with each previous action. 
     \end{enumerate}
-    A permutation of \emph{n} objects is an arrangement of the objects in a \textbf{definite order}. This can be expressed with permutation notation, shown below where P(n,n) equals the number of ways to permute n objects.
+    A permutation of \emph{n} objects is an arrangement of the objects in a \textbf{definite order}.
+    This can be expressed with permutation notation, shown below where P(n,n) equals the number of ways to permute n objects.
     \begin{equation*}
         P(n,n) = n!
     \end{equation*}
-    This equation will only work when the number of spaces to occupy and the number of objects are equal. In other cases we'll have to use an r-arrangement.
+    This equation will only work when the number of spaces to occupy and the number of objects are equal.
+    In other cases we'll have to use an r-arrangement.
     
     \subsection{R-Arrangements}
-    If you have more objects than places you can put the objects into, then we can use something called an r-arrangement. An r-arrangement is a permutation of \emph{n} objects taken \emph{r} at a time, as is shown below.
+    If you have more objects than places you can put the objects into, then we can use something called an r-arrangement.
+    An r-arrangement is a permutation of \emph{n} objects taken \emph{r} at a time, as is shown below.
     \begin{equation*}
        P(n,r) = \frac{n!}{(n-r)!} 
     \end{equation*}
-    Where $P(n,r)$ equals the total number of arrangements you have, divided by the number of unused objects. This is most commonly displayed on calculators as \emph{nPr}. For example you have 4 subjects, but you can only study two at a time. The equation for that would be $\frac{4!}{(4-2)!}=12\mbox{ combinations.}$ 
+    Where $P(n,r)$ equals the total number of arrangements you have, divided by the number of unused objects.
+    This is most commonly displayed on calculators as \emph{nPr}.
+    For example you have 4 subjects, but you can only study two at a time.
+    The equation for that would be $\frac{4!}{(4-2)!}=12\mbox{ combinations.}$ 
     
     \subsection{Permutations with Repeating Elements}
-    All previous examples will ONLY work with non-repeating elements, such as the letters in the word "MONTREAL", or 5 different books. They will definitely NOT work for questions with repeating elements, such as the word "FIJI". For all repeating elements we'll have to follow another rule shown below.
+    All previous examples will ONLY work with non-repeating elements, such as the letters in the word "MONTREAL", or 5 different books.
+    They will definitely NOT work for questions with repeating elements, such as the word "FIJI".
+    For all repeating elements we'll have to follow another rule shown below.
     \begin{definition}
         In general, the number of arrangements of \emph{n} objects of which \emph{a} of one kind are alike, and \emph{b} of one kind are alike and so forth is given by the expression below, Where the number of permutations can be found by dividing the total number of possible combinations by the repeating elements.
         \begin{equation*}
@@ -98,10 +112,12 @@ or how many ways can you bring 4 people out of 20 friends to a party.
     There are 3 methods for solving problems with permutations. They are called: the Indirect Method, the Case Method, and Circular Arrangements.
     
         \subsubsection{Indirect Method}
-        The indirect method involves taking all possibilities and subtracting those which are not wanted. For instance, say you have 3 people that need to sit at a table, but 2 of them don't want to sit beside each other. There is a step-by-step process that you can use for this question that is explained below.
+        The indirect method involves taking all possibilities and subtracting those which are not wanted.
+        For instance, say you have 3 people that need to sit at a table, but 2 of them don't want to sit beside each other.
+        There is a step-by-step process that you can use for this question that is explained below.
         \begin{enumerate}
-                \item Find all possible permutations (ex. P(3,3) )
-                \item Find all unwanted permutations (in this case when they are together)
+                \item Find all possible permutations (ex. P(3,3) ),
+                \item Find all unwanted permutations (in this case when they are together),
                 \item Subtract the unwanted permutations from the wanted permutations.
             \end{enumerate}
         This can be written as:
@@ -110,22 +126,35 @@ or how many ways can you bring 4 people out of 20 friends to a party.
         \end{equation*}
     
         \subsubsection{Case Method}
-        The Case Method involves breaking down the equation into manageable parts, then adding them to get the final solution. There is a step-by-step example problem in Section 1 of the appendix, along with an explanation of why, and how you manage the "breaking into parts" aspect.
+        The Case Method involves breaking down the equation into manageable parts, then adding them to get the final solution.
+        There is a step-by-step example problem in Section 1 of the appendix, along with an explanation of why, and how you manage the "breaking into parts" aspect.
     
         \subsubsection{Circular Arrangements}
-        Circular arrangements are no longer a part of the curriculum, and as such they will not be tested on, but they are still quite useful to know in niche cases. If you have seven people seated at a table, and they all move to their rights, their positions may have moved, but their order remains the same, think of it like a circle. Keep in mind that if there is some fixed point, the question just ends into a typical linear arrangement, with the equation simplifying to $1 \cdot (n-1)!$.
+        Circular arrangements are no longer a part of the curriculum, and as such they will not be tested on, but they are still quite useful to know in niche cases.
+        If you have seven people seated at a table, and they all move to their rights, their positions may have moved, but their order remains the same, like a circle.
+        Keep in mind that if there is some fixed point, the question just ends into a typical linear arrangement, with the equation simplifying to $1 \cdot (n-1)!$.
        
 \section{Combinations}
 
     \subsection{What are Combinations?}
-     A Combination is a way of selecting objects (permuting) from a group, without the order being important. In essence, it is orderless permutations. Let $ABC$ be a permutation. In Section 1, we asserted that $ABC$ and $BAC$ are different, as their orders are different. In combinations, we assert that $ABC$ and $BAC$ are the same, as they contain the same objects, just in a different order.
+     A Combination is a way of selecting objects (permuting) from a group, without the order being important.
+     In essence, it is orderless permutations. Let $ABC$ be a permutation.
+     With permutations we asserted that $ABC$ and $BAC$ are different, as they are ordered differently.
+     In combinations, we assert that $ABC$ and $BAC$ are the same, as they contain the same objects, just in a different order.
 
     \subsection{Set Theory}
-    Set Theory involves the creation and manipulation of sets and their properties. A set is a collection of distinct objects in which their order does not matter. The objects in this set are called elements. If a set does not have any elements in it, we refer to it as a \emph{null set}, which is shown as $\emptyset$ or $(\emptyset)$. This null set is a subset of everything. If we want to describe a set containing elements, we must follow the example below.
+    Set Theory involves the creation and manipulation of sets and their properties.
+    A set is a collection of distinct objects in which their order does not matter.
+    The objects in this set are called elements.
+    If a set does not have any elements in it, we refer to it as a \emph{null set}, which is shown as $\emptyset$ or $(\emptyset)$.
+    This null set is a subset of everything.
+    If we want to describe a set containing elements, we must follow the example below.
     \begin{equation*}
         X = \{a,b,c,d,e,f,\cdots,y,z\}
     \end{equation*}
-    If we wish to describe the number of elements in the set, we can use $n(X)$, where X represents the set, and n returns the number of elements in that set. In this case $n(X) = 26$, as set X contains all the letters of the alphabet. Sets are referred to differently when compared to other sets, as defined below.
+    If we wish to describe the number of elements in the set, we can use $n(X)$, where X represents the set, and n returns the number of elements in that set.
+    In this case $n(X) = 26$, as set X contains all the letters of the alphabet.
+    Sets are referred to differently when compared to other sets, as defined below.
     \begin{definition}
     Special Properties of Sets when Compared to Other Sets
     \begin{enumerate}
@@ -136,7 +165,8 @@ or how many ways can you bring 4 people out of 20 friends to a party.
     \end{definition}
     
         \subsubsection{Universal Set and Complement Sets}
-        The set of all elements being considered is called the\emph{universal set} and is always denoted by $S$. When referring to a set of all elements that are in the universal set, but\textbf{ not in set A}, we call this the complement of $A$ or $A`$. For example:
+        The set of all elements being considered is called the\emph{universal set} and is always denoted by $S$.
+        When referring to a set of all elements that are in the universal set, but\textbf{ not in set A}, we call this the complement of $A$ or $A`$. For example:
         \begin{equation*}
             S = \{1,2,3,4\}, A = \{1,3\}, A`=\{2,4\}
         \end{equation*}
@@ -160,22 +190,27 @@ or how many ways can you bring 4 people out of 20 friends to a party.
         In this case, n(X) is the number of elements in Set X. If a question comes up, where we need the number of subsets of a given set with the length $y$, of set $x$, we'd simply use $\binom{n(x)}{y}$
         
     \subsection{Introduction to Combinations}
-    A combination is a selection of r objects, from n distinct objects \emph{without regard for order}. The equation for solving combinations is written below.
+    A combination is a selection of r objects, from n distinct objects \emph{without regard for order}.
+    The equation for solving combinations is written below.
     \begin{equation*}
         C(n,r) = \frac{n!}{(n-r)!\cdot r!}
     \end{equation*}
-    This equations finds all combinations by dividing number of objects, by the unused objects $(n-r)!$ and the order of the selected objects. This can be further simplified to:
+    This equations finds all combinations by dividing number of objects, by the unused objects $(n-r)!$ and the order of the selected objects.
+    This can be further simplified to:
     \begin{equation*}
         C(n,r) = \frac{P(n,r)}{r!}
     \end{equation*}
-    If order does not matter, the process is called a \emph{Combination}, whereas when order does matter, it is called a \emph{Permutation}. On your calculator, the formulae for combinations will be shown as \textbf{nCr}. If written out by hand, we will use the form:
+    If order does not matter, the process is called a \emph{Combination}, whereas when order does matter, it is called a \emph{Permutation}.
+    On your calculator, the formulae for combinations will be shown as \textbf{nCr}.
+    If written out by hand, we will use the form:
     \begin{equation*}
         \binom{n}{r} = \frac{n!}{(n-r)!\cdot n!}
     \end{equation*}
     Or simply \(\binom{n}{r}\).
     
     \subsection{Inclusion\textemdash Exclusion Principle}
-    The Inclusion-exclusion principle is a method of obtaining the number of elements in finite sets. Typically used when asked for the number of combinations of two things, where there is overlap between the two.\\
+    The Inclusion-exclusion principle is a method of obtaining the number of elements in finite sets.
+    Typically used when asked for the number of combinations of two things, where there is overlap between the two.\\
     Let A represent Set A, and let B represent Set B.
     \begin{center}
         %% Thank you http://tex.stackexchange.com/questions/9681/how-to-draw-venn-diagrams-especially-complements-in-latex
@@ -198,7 +233,10 @@ or how many ways can you bring 4 people out of 20 friends to a party.
                   (-2,-2) rectangle (3,2) node [text=black,above] {$H$};
         \end{tikzpicture}
     \end{center}
-    This diagram perfectly represents the overlap between the two sets. If you caught it earlier, what we're actually finding is $A\cup B$. The Inclusion\textemdash Exclusion Principle is merely a way of finding it algebraically. This image represents the equation below.
+    This diagram perfectly represents the overlap between the two sets.
+    If you caught it earlier, what we're actually finding is $A\cup B$.
+    The Inclusion\textemdash Exclusion Principle is merely a way of finding it algebraically.
+    The image above represents the equation below.
     \begin{equation*}
         |A\cup B| = |A| + |B| - |A\cap B|
     \end{equation*}
@@ -206,7 +244,10 @@ or how many ways can you bring 4 people out of 20 friends to a party.
 \section{Modelling with Matrices}
     
     \subsection{Intro to Matrices}
-    A matrix is a rectangular array of numbers that is used to organize data. If you are used to computer programming, you will recognize them as 2D arrays. If you are good with set notation, they are in essence, a set of sets. Matrices follow the format below:
+    A matrix is a rectangular array of numbers that is used to organize data.
+    If you are used to computer programming, you will recognize them as 2D arrays.
+    If you are good with set notation, they are in essence, a set of sets.
+    Matrices follow the format below:
     \begin{equation*}
         X =
         \begin{bmatrix}
@@ -214,18 +255,24 @@ or how many ways can you bring 4 people out of 20 friends to a party.
             d & e & f
         \end{bmatrix}
     \end{equation*}
-    Matrices have various properties, and unique terms created to describe them. For instance, looking at the matrix above, we can safely say that $a$ in an entry, as defined below.
+    Matrices have various properties, and unique terms created to describe them.
+    For instance, looking at the matrix above, we can safely say that $a$ in an entry, as defined below.
     \begin{definition}
         Entry: An entry refers to a number in a matrix.
     \end{definition}
     How did we figure out the number of entries in the matrix? Simple, we can use the matrix's \emph{dimensions} to figure that out.
     \begin{definition}Dimensions:
-        These refer to the size of the matrix, described by the number of rows and columns. The formula below is used to solve for dimensions, where D is the result, $R$ is the rows, and $C$ is the columns.
+        These refer to the size of the matrix, described by the number of rows and columns.
+        The formula below is used to solve for dimensions, where D is the result, $R$ is the rows, and $C$ is the columns.
         \begin{equation*}
                 D = R \cdot C
         \end{equation*}
     \end{definition}
-    Matrix's entries are numbered in a way so that it is easy to refer to a specific entry. Capital letters are used for the names of matrices, and lowercase characters are used for the names of entries. Shown below are the entries named, with numbers instead of letters. The first character represents the y value, whereas the second represents the x value. In the equation below, $a_{13}$ represents the entry in row 1, column 3.
+    Matrix's entries are numbered in a way so that it is easy to refer to a specific entry.
+    Capital letters are used for the names of matrices, and lowercase characters are used for the names of entries.
+    Shown below are the entries named, with numbers instead of letters.
+    The first character represents the y value, whereas the second represents the x value.
+    In the equation below, $a_{13}$ represents the entry in row 1, column 3.
     \begin{equation*}
         X =
         \begin{bmatrix}
@@ -288,7 +335,10 @@ or how many ways can you bring 4 people out of 20 friends to a party.
     \end{definition}
         
     \subsection{Basic Operations with Matrices}
-        Matrices may only be added or subtracted when they have the same dimensions. Adding matrices is done by adding entry by entry to the other matrix. $A_{12}$ will be added with $B_{12}$ and so forth. Shown below is a valid example of adding with matrices in which the entries are labeled to show proper addition:
+        Matrices may only be added or subtracted when they have the same dimensions.
+        Adding matrices is done by adding entry by entry to the other matrix.
+        $A_{12}$ will be added with $B_{12}$ and so forth.
+        Shown below is a valid example of adding with matrices in which the entries are labeled to show proper addition:
         \begin{equation*}
             \begin{bmatrix}
                 a_{11} & a_{12} & a_{13} \\
@@ -306,7 +356,8 @@ or how many ways can you bring 4 people out of 20 friends to a party.
             \end{bmatrix}
         \end{equation*}
         
-        They may also be multiplied by a coefficient, by multiplying the coefficient with every entry in the matrix. Shown below is a proper solution in which a matrix is multiplied by a coefficient, with entries labeled:
+        They may also be multiplied by a coefficient, by multiplying the coefficient with every entry in the matrix.
+        Shown below is a proper solution in which a matrix is multiplied by a coefficient, with entries labeled:
          \begin{equation*}
             x
             \begin{bmatrix}
@@ -321,7 +372,14 @@ or how many ways can you bring 4 people out of 20 friends to a party.
         \end{equation*}
         
         \subsection{Multiplying Matrices Together}
-        Matrices may also be multiplied with other matrices, yet to do so we must follow certain rules. Let's say we have Matrix A and Matrix B as shown below. To multiply, we need to make sure the \emph{inner dimensions} are the same. We know that Matrix A's dimensions are $3 \cdot 2$, whereas for Matrix B, they are $2 \cdot 3$. Since we know this, we can find the \emph{inner dimensions}. The \emph{inner dimensions}, equals the columns of Matrix A and the rows of Matrix B. In this case, that would work out to be $3$ and $3$. Since they are the same, we are allowed to multiply these matrices. 
+        Matrices may also be multiplied with other matrices, yet to do so we must follow certain rules.
+        Let's say we have Matrix A and Matrix B as shown below.
+        To multiply, we need to make sure the \emph{inner dimensions} are the same.
+        We know that Matrix A's dimensions are $3 \cdot 2$, whereas for Matrix B, they are $2 \cdot 3$.
+        Since we know this, we can find the \emph{inner dimensions}.
+        The \emph{inner dimensions}, equals the columns of Matrix A and the rows of Matrix B.
+        In this case, that would work out to be $3$ and $3$.
+        Since they are the same, we are allowed to multiply these matrices. 
         \begin{equation*}%Demonstrating Matrices. 
             A =
             \begin{bmatrix}
@@ -335,7 +393,9 @@ or how many ways can you bring 4 people out of 20 friends to a party.
                 y & z
             \end{bmatrix}
         \end{equation*}
-        Next, the rows of Matrix A times the columns of Matrix B, also known as the \emph{outer dimensions}, will give us the dimensions of the resultant matrix. Since Matrix A has two rows, and Matrix B has two columns, our resultant Matrix will possess the dimensions $2\cdot2$. Shown below is the updated equation. 
+        Next, the rows of Matrix A times the columns of Matrix B, also known as the \emph{outer dimensions}, will give us the dimensions of the resultant matrix.
+        Since Matrix A has two rows, and Matrix B has two columns, our resultant Matrix will possess the dimensions $2\cdot2$.
+        Shown below is the updated equation. 
         \begin{equation*}
             \begin{bmatrix}
                 a & b & c\\
@@ -353,14 +413,19 @@ or how many ways can you bring 4 people out of 20 friends to a party.
                 ?&?
             \end{bmatrix}
         \end{equation*}
-        Multiplying them is a bit strange at first, because to do it, we multiply row by row. Starting at the first row in Matrix A, we can see we have $a_{11},b_{12},c_{13}$ as our values, with their locations being labeled for convenience.  We must multiply these values each column in Matrix B, starting with the values $u_{11},w_{21},y_{31}$. To find entry (1,1) we can use the formula shown below, Where E represents the entry, and r represents a row in Matrix A (with xy values) and c represents a column in Matrix B.
+        Multiplying them is a bit strange at first, because to do it, we multiply row by row.
+        Starting at the first row in Matrix A, we can see we have $a_{11},b_{12},c_{13}$ as our values, with their locations being labeled for convenience.
+        We must multiply these values each column in Matrix B, starting with the values $u_{11},w_{21},y_{31}$.
+        To find entry (1,1) we can use the formula shown below, where $E$ represents the entry, $r$ represents a row in Matrix A, and c represents a column in Matrix B.
         \begin{equation*}
             E_{11} = r_{11} \cdot c_{11}  +  r_{12} \cdot c_{21}  +   r_{13} \cdot c_{31}
         \end{equation*}
-        If you want to do it just by eye, you can multiply $A_{11}$ by $B_{11}$, $A_{12}$ by $B_{21}$, and $A_{13}$ by $B_{31}$, and add them all up. It will seem totally awful at first, but after you do a couple it'll all work out fine.
+        If you want to do it just by eye, you can multiply $A_{11}$ by $B_{11}$, $A_{12}$ by $B_{21}$, and $A_{13}$ by $B_{31}$, and add them all up.
+        It will seem totally awful at first, but after you do a couple it'll all work out fine.
         
         \subsection{Identity Matrices}
-        An Identity Matrix is a $n\cdot n$ size matrix in which every number along the main diagonal is a 1, and the rest are zeros. Shown below is Matrix I, a $3\cdot 3$ Identity Matrix.
+        An Identity Matrix is a $n\cdot n$ size matrix in which every number along the main diagonal is a 1, and the rest are zeros.
+        Shown below is Matrix I, a $3\cdot 3$ Identity Matrix.
         \begin{equation*}
         I =
             \begin{bmatrix}
@@ -369,37 +434,49 @@ or how many ways can you bring 4 people out of 20 friends to a party.
                 0 & 0 & 1
             \end{bmatrix}
         \end{equation*}
-        This matrix is very special, as any square matrix multiplied by its inverse will equal an Identity Matrix. We can further formalize this assumption, by referring to a given matrix as Matrix A.
+        This matrix is very special, as any square matrix multiplied by its inverse will equal an Identity Matrix.
+        We can further formalize this assumption, by referring to a given matrix as Matrix A.
         \begin{equation*}
             A\cdot A^{-1} = I
         \end{equation*}
         Its too bad we can't divide matrices, how can we ever solve for I now?
         
         \subsection{Finding Inverse Matrices}
-        Finding the inverse of large matrices is one of the most mathematically intensive processes out there. Good thing we'll only be finding the inverse of a $2\cdot2$ matrix instead.
+        Finding the inverse of large matrices is one of the most mathematically intensive processes out there.
+        Good thing we'll only be finding the inverse of a $2\cdot2$ matrix instead.
 
 \section{Probability}
 
     \subsection{What is probability?}
-    Probability is the measurement of the chance of an event occurring. If you've ever checked the weather and seen that it's a "20\% chance of rain", you've seen probability in action. To start, we'll need to define some terms.
+    Probability is the measurement of the chance of an event occurring.
+    If you've ever checked the weather and seen that it's a "20\% chance of rain", you've seen probability in action.
+    To start, we'll need to define some terms.
     \begin{definition}
         Outcomes: A possible result, typically referencing all of the possible results from the situation.
     \end{definition}
     \begin{definition}
         Events: These typically refer to desired outcomes
     \end{definition}
-    Typically when finding probability, we'll divide all possible outcomes from our desired outcomes. Thinking in terms of set notation, we'll refer to all of our desired outcomes as n(A), where A is our desired outcome. n(S) will refer to all of the possible outcomes, and P(A) referring to the likelihood of A occurring. To generalize, we'll use the equation below.
+    Typically when finding probability, we'll divide all possible outcomes from our desired outcomes.
+    Thinking in terms of set notation, we'll refer to all of our desired outcomes as n(A), where A is our desired outcome.
+    n(S) will refer to all of the possible outcomes, and P(A) referring to the likelihood of A occurring.
+    To generalize, we'll use the equation below.
     \begin{equation*}
         P(A) = \frac{n(A)}{n(S)}
     \end{equation*}
     Since the number of desired outcomes will never be greater than the number of total outcomes, we'll always have a decimal between 0 (0\%) and 1 (100\%), which we can convert to a percentage (ex. $\frac{1}{4}=0.25=25\%$), though typically we'll simply leave it as a reduced version of the fraction.
     
     \subsection{Mutually Exclusive Events and Non-Mutually Exclusive Events}
-    Mutually Exclusive events are events that have zero overlap with other events. Recall the Venn Diagram of Sets in The Combinations section. Assume A and B are both events. To find the probability of either of them happening, we'll have to remember the equation:
+    Mutually Exclusive events are events that have zero overlap with other events.
+    Recall the Venn Diagram of Sets in the Combinations section, and assume A and B are both events.
+    To find the probability of either of them happening, we'll have to remember the equation:
     \begin{equation*}
         n(A\cup B) = n(A) + n(B)
     \end{equation*}
-    This equation finds all the ways A or B can happen, with zero overlap. The problem with this equation is that it only finds the number of wanted outcomes. Remember, to find the probability of something, we find the wanted outcomes, and divide it by all of the possible outcomes. After this, our equation will look like this:
+    This equation finds all the ways A or B can happen, with zero overlap.
+    The problem with this equation is that it only finds the number of wanted outcomes.
+    Remember, to find the probability of something, we find the wanted outcomes, and divide it by all of the possible outcomes.
+    After this, our equation will look like this:
     \begin{equation*}
         \frac{n(A \cup B)}{n(S)} = \frac{n(A) + n(B)}{n(S)}
     \end{equation*}
@@ -407,16 +484,24 @@ or how many ways can you bring 4 people out of 20 friends to a party.
     \begin{equation*}
         P(A\cup B) = P(A) + P(B)
     \end{equation*}
-    For non-mutually exclusive events, we must instead use a different equation, more accurate to the one we've discussed in the Sets Unit. Following the same logic we used earlier, our equation works out to:
+    For non-mutually exclusive events, we must instead use a different equation, more accurate to the one we've discussed in the Sets Unit.
+    Following the same logic we used earlier, our equation works out to:
     \begin{equation*}
         P(A\cup B) = P(A) + P(B) - P(A\cap B)
     \end{equation*}
     Where $P(A\cap B)$ equals the probability of both of those events occurring.
 
     \subsection{Independent Probability}
-    When two events occur at the same time, or one after another with no effect on each other, they are called Independent Events. If you roll a die, then select a card, this would be independent, as the outcomes don't affect each other. If you think of this in terms of sets once again. So solve an Independent Probability question, we have to find the probability of A and B, and to do that we'll use the equation below.
+    When two events occur at the same time, or one after another with no effect on each other, they are called Independent Events.
+    If you roll a die, then select a card, this would be independent, as the outcomes don't affect each other.
+    So solve an Independent Probability question we'll have to think in terms of sets, so the probability of A and B, can be solved with the equation below.
     \begin{equation*}
         P(A\cap B) = P(A) \cdot P(B)
+    \end{equation*}
+        But what happens if we need to find the probability of $(A \mbox{ or } B)$?
+        To find that we'll need to use another equation.
+    \begin{equation*}
+        P(A\cup B) = P(A) + P(B) - P(A\cap B)
     \end{equation*}
     
     
