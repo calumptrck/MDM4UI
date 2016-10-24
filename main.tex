@@ -59,7 +59,6 @@ or how many ways can you bring 4 people out of 20 friends to a party.
         The Rule of Product states that if the 1st action can be performed in n ways, and the 2nd action can be performed in m ways.
         They can be performed together in $n\cdot m$ ways. 
     \end{definition}
-    \clearpage
     What happens if the actions cannot be performed together? Such as which car to buy? In that case we have another rule, known as the \emph{Rule of Sum}.
     \begin{definition}
         The Rule of Sum states that if the 1st action can be performed in n ways, and the 2nd action can be performed in m ways, and these actions cannot occur together, then there are $n+m$ ways for either of the actions to occur.
@@ -85,7 +84,6 @@ or how many ways can you bring 4 people out of 20 friends to a party.
        P(n,r) = \frac{n!}{(n-r)!} 
     \end{equation*}
     Where $P(n,r)$ equals the total number of arrangements you have, divided by the number of unused objects. This is most commonly displayed on calculators as \emph{nPr}. For example you have 4 subjects, but you can only study two at a time. The equation for that would be $\frac{4!}{(4-2)!}=12\mbox{ combinations.}$ 
-\clearpage
     
     \subsection{Permutations with Repeating Elements}
     All previous examples will ONLY work with non-repeating elements, such as the letters in the word "MONTREAL", or 5 different books. They will definitely NOT work for questions with repeating elements, such as the word "FIJI". For all repeating elements we'll have to follow another rule shown below.
@@ -113,8 +111,6 @@ or how many ways can you bring 4 people out of 20 friends to a party.
     
         \subsubsection{Case Method}
         The Case Method involves breaking down the equation into manageable parts, then adding them to get the final solution. There is a step-by-step example problem in Section 1 of the appendix, along with an explanation of why, and how you manage the "breaking into parts" aspect.
-
-    \clearpage
     
         \subsubsection{Circular Arrangements}
         Circular arrangements are no longer a part of the curriculum, and as such they will not be tested on, but they are still quite useful to know in niche cases. If you have seven people seated at a table, and they all move to their rights, their positions may have moved, but their order remains the same, think of it like a circle. Keep in mind that if there is some fixed point, the question just ends into a typical linear arrangement, with the equation simplifying to $1 \cdot (n-1)!$.
@@ -207,101 +203,57 @@ or how many ways can you bring 4 people out of 20 friends to a party.
         |A\cup B| = |A| + |B| - |A\cap B|
     \end{equation*}
     
-\section{Probability}
-
-    \subsection{What is probability?}
-    Probability is the measurement of the chance of an event occurring. If you've ever checked the weather and seen that it's a "20\% chance of rain", you've seen probability in action. To start, we'll need to define some terms.
+\section{Modelling with Matrices}
+    
+    \subsection{Intro to Matrices}
+    A matrix is a rectangular array of numbers that is used to organize data. If you are used to computer programming, you will recognize them as 2D arrays. If you are good with set notation, they are in essence, a set of sets. Matrices follow the format below:
+    \begin{equation*}
+        X =
+        \begin{bmatrix}
+            a & b & c \\
+            d & e & f
+        \end{bmatrix}
+    \end{equation*}
+    Matrices have various properties, and unique terms created to describe them. For instance, looking at the matrix above, we can safely say that $a$ in an entry, as defined below.
     \begin{definition}
-        Outcomes: A possible result, typically referencing all of the possible results from the situation.
+        Entry: An entry refers to a number in a matrix.
     \end{definition}
-    \begin{definition}
-        Events: These typically refer to desired outcomes
-    \end{definition}
-    Typically when finding probability, we'll divide all possible outcomes from our desired outcomes. Thinking in terms of set notation, we'll refer to all of our desired outcomes as n(A), where A is our desired outcome. n(S) will refer to all of the possible outcomes, and P(A) referring to the likelihood of A occurring. To generalize, we'll use the equation below.
-    \begin{equation*}
-        P(A) = \frac{n(A)}{n(S)}
-    \end{equation*}
-    Since the number of desired outcomes will never be greater than the number of total outcomes, we'll always have a decimal between 0 (0\%) and 1 (100\%), which we can convert to a percentage (ex. $\frac{1}{4}=0.25=25\%$), though typically we'll simply leave it as a reduced version of the fraction.
-    
-    \subsection{Mutually Exclusive Events and Non-Mutually Exclusive Events}
-    Mutually Exclusive events are events that have zero overlap with other events. Recall the Venn Diagram of Sets in The Combinations section. Assume A and B are both events. To find the probability of either of them happening, we'll have to remember the equation:
-    \begin{equation*}
-        n(A\cup B) = n(A) + n(B)
-    \end{equation*}
-    This equation finds all the ways A or B can happen, with zero overlap. The problem with this equation is that it only finds the number of wanted outcomes. Remember, to find the probability of something, we find the wanted outcomes, and divide it by all of the possible outcomes. After this, our equation will look like this:
-    \begin{equation*}
-        \frac{n(A \cup B}{n(S)} = \frac{n(A) + n(B)}{n(S)}
-    \end{equation*}
-    Which reduces to:
-    \begin{equation*}
-        P(A\cup B) = P(A) + P(B)
-    \end{equation*}
-    For non-mutually exclusive events, we must instead use a different equation, more accurate to the one we've discussed in the Sets Unit. Following the same logic we used earlier, our equation works out to:
-    \begin{equation*}
-        P(A\cup B) = P(A) + P(B) - P(A\cap B)
-    \end{equation*}
-    Where $P(A\cap B)$ equals the probability of both of those events occurring.
-
-    \subsection{Independent Probability}
-    When two events occur at the same time, or one after another with no effect on each other, they are called Independent Events. If you roll a die, then select a card, this would be independent, as the outcomes don't affect each other. If you think of this in terms of sets once again. So solve an Independent Probability question, we have to find the probability of A and B, and to do that we'll use the equation below.
-    \begin{equation*}
-        P(A\cap B) = P(A) \cdot P(B)
-    \end{equation*}
-    
-\section{Independent Study Units}
-
-    \subsection{Modelling with Matrices}
-    
-        \subsubsection{Intro to Matrices}
-        A matrix is a rectangular array of numbers that is used to organize data. If you are used to computer programming, you will recognize them as 2D arrays. If you are good with set notation, they are in essence, a set of sets. Matrices follow the format below:
+    How did we figure out the number of entries in the matrix? Simple, we can use the matrix's \emph{dimensions} to figure that out.
+    \begin{definition}Dimensions:
+        These refer to the size of the matrix, described by the number of rows and columns. The formula below is used to solve for dimensions, where D is the result, $R$ is the rows, and $C$ is the columns.
         \begin{equation*}
-            X =
+                D = R \cdot C
+        \end{equation*}
+    \end{definition}
+    Matrix's entries are numbered in a way so that it is easy to refer to a specific entry. Capital letters are used for the names of matrices, and lowercase characters are used for the names of entries. Shown below are the entries named, with numbers instead of letters. The first character represents the y value, whereas the second represents the x value. In the equation below, $a_{13}$ represents the entry in row 1, column 3.
+    \begin{equation*}
+        X =
+        \begin{bmatrix}
+            a_{11} & a_{12} & a_{13} \\
+            a_{21} & a_{22} & a_{23}
+        \end{bmatrix}
+    \end{equation*}
+        
+    \subsection{Variations and Classifications of Matrices}
+    Matrices can be transformed, and compared to each other, much like sets. The definitions of the variations and classifications of the matrices are listed below.
+    \begin{definition}Transpose Matrix: 
+        A transpose matrix is a matrix obtained by interchanging the rows and columns. This is written as $X^{+}$. Shown below is Matrix W, and the transposed equivalent.
+        \begin{equation*}
+            W =
             \begin{bmatrix}
                 a & b & c \\
                 d & e & f
             \end{bmatrix}
-        \end{equation*}
-        Matrices have various properties, and unique terms created to describe them. For instance, looking at the matrix above, we can safely say that $a$ in an entry, as defined below.
-        \begin{definition}
-            Entry: An entry refers to a number in a matrix.
-        \end{definition}
-        How did we figure out the number of entries in the matrix? Simple, we can use the matrix's \emph{dimensions} to figure that out.
-        \begin{definition}Dimensions:
-            These refer to the size of the matrix, described by the number of rows and columns. The formula below is used to solve for dimensions, where D is the result, $R$ is the rows, and $C$ is the columns.
-            \begin{equation*}
-                D = R \cdot C
-            \end{equation*}
-        \end{definition}
-        Matrix's entries are numbered in a way so that it is easy to refer to a specific entry. Capital letters are used for the names of matrices, and lowercase characters are used for the names of entries. Shown below are the entries named, with numbers instead of letters. The first character represents the y value, whereas the second represents the x value. In the equation below, $a_{13}$ represents the entry in row 1, column 3.
-        \begin{equation*}
-            X =
+            -> X^{+} =
             \begin{bmatrix}
-                a_{11} & a_{12} & a_{13} \\
-                a_{21} & a_{22} & a_{23}
+                a & d \\
+                b & e \\
+                c & f
             \end{bmatrix}
         \end{equation*}
+    \end{definition}
         
-        \subsubsection{Variations and Classifications of Matrices}
-        Matrices can be transformed, and compared to each other, much like sets. The definitions of the variations and classifications of the matrices are listed below.
-        
-        \begin{definition}Transpose Matrix: 
-            A transpose matrix is a matrix obtained by interchanging the rows and columns. This is written as $X^{+}$. Shown below is Matrix W, and the transposed equivalent.
-            \begin{equation*}
-                W =
-                \begin{bmatrix}
-                    a & b & c \\
-                    d & e & f
-                \end{bmatrix}
-                -> X^{+} =
-                \begin{bmatrix}
-                    a & d \\
-                    b & e \\
-                    c & f
-                \end{bmatrix}
-            \end{equation*}
-        \end{definition}
-        
-        \begin{definition}Column Matrix:
+    \begin{definition}Column Matrix:
         A Column Matrix is a matrix that has only one x value. Instead of rows and columns, it is merely a column. For instance, Matrix X in this case would be a Column Matrix.
         \begin{equation*}%Column Matrix
             X =
@@ -311,9 +263,9 @@ or how many ways can you bring 4 people out of 20 friends to a party.
                 c
             \end{bmatrix}
         \end{equation*}
-        \end{definition}
+    \end{definition}
         
-        \begin{definition}Row Matrix:
+    \begin{definition}Row Matrix:
         A Row Matrix is a matrix that has only one y value. It is the transpose of the Column Matrix For instance, Matrix Y in this case would be a Row Matrix.
         \begin{equation*}%Row Matrix
             Y =
@@ -321,9 +273,9 @@ or how many ways can you bring 4 people out of 20 friends to a party.
                 a & b & c
             \end{bmatrix}
         \end{equation*}
-        \end{definition}
+    \end{definition}
         
-        \begin{definition}Square Matrix:
+    \begin{definition}Square Matrix:
         A Square Matrix is a matrix in which the rows and columns are equal. For instance, Matrix Z below is a Square Matrix.
         \begin{equation*}%Column Matrix
             Z =
@@ -333,9 +285,9 @@ or how many ways can you bring 4 people out of 20 friends to a party.
                 g & h & i
             \end{bmatrix}
         \end{equation*}
-        \end{definition}
+    \end{definition}
         
-        \subsubsection{Basic Operations with Matrices}
+    \subsection{Basic Operations with Matrices}
         Matrices may only be added or subtracted when they have the same dimensions. Adding matrices is done by adding entry by entry to the other matrix. $A_{12}$ will be added with $B_{12}$ and so forth. Shown below is a valid example of adding with matrices in which the entries are labeled to show proper addition:
         \begin{equation*}
             \begin{bmatrix}
@@ -356,19 +308,19 @@ or how many ways can you bring 4 people out of 20 friends to a party.
         
         They may also be multiplied by a coefficient, by multiplying the coefficient with every entry in the matrix. Shown below is a proper solution in which a matrix is multiplied by a coefficient, with entries labeled:
          \begin{equation*}
-         x
+            x
             \begin{bmatrix}
                 y_{11} & y_{12} & y_{13} \\
                 y_{21} & y_{22} & y_{23}
             \end{bmatrix}
-        =
+            =
             \begin{bmatrix}
                 xy_{11} & xy_{12} & xy_{13} \\
                 xy_{21} & xy_{22} & xy_{23}
             \end{bmatrix}
         \end{equation*}
         
-        \subsubsection{Multiplying Matrices Together}
+        \subsection{Multiplying Matrices Together}
         Matrices may also be multiplied with other matrices, yet to do so we must follow certain rules. Let's say we have Matrix A and Matrix B as shown below. To multiply, we need to make sure the \emph{inner dimensions} are the same. We know that Matrix A's dimensions are $3 \cdot 2$, whereas for Matrix B, they are $2 \cdot 3$. Since we know this, we can find the \emph{inner dimensions}. The \emph{inner dimensions}, equals the columns of Matrix A and the rows of Matrix B. In this case, that would work out to be $3$ and $3$. Since they are the same, we are allowed to multiply these matrices. 
         \begin{equation*}%Demonstrating Matrices. 
             A =
@@ -395,7 +347,7 @@ or how many ways can you bring 4 people out of 20 friends to a party.
                 w & x\\
                 y & z
             \end{bmatrix}
-        =
+            =
             \begin{bmatrix}
                 ?&?\\
                 ?&?
@@ -407,7 +359,7 @@ or how many ways can you bring 4 people out of 20 friends to a party.
         \end{equation*}
         If you want to do it just by eye, you can multiply $A_{11}$ by $B_{11}$, $A_{12}$ by $B_{21}$, and $A_{13}$ by $B_{31}$, and add them all up. It will seem totally awful at first, but after you do a couple it'll all work out fine.
         
-        \subsubsection{Identity Matrices}
+        \subsection{Identity Matrices}
         An Identity Matrix is a $n\cdot n$ size matrix in which every number along the main diagonal is a 1, and the rest are zeros. Shown below is Matrix I, a $3\cdot 3$ Identity Matrix.
         \begin{equation*}
         I =
@@ -423,10 +375,52 @@ or how many ways can you bring 4 people out of 20 friends to a party.
         \end{equation*}
         Its too bad we can't divide matrices, how can we ever solve for I now?
         
-        \subsubsection{Finding Inverse Matrices}
+        \subsection{Finding Inverse Matrices}
         Finding the inverse of large matrices is one of the most mathematically intensive processes out there. Good thing we'll only be finding the inverse of a $2\cdot2$ matrix instead.
+
+\section{Probability}
+
+    \subsection{What is probability?}
+    Probability is the measurement of the chance of an event occurring. If you've ever checked the weather and seen that it's a "20\% chance of rain", you've seen probability in action. To start, we'll need to define some terms.
+    \begin{definition}
+        Outcomes: A possible result, typically referencing all of the possible results from the situation.
+    \end{definition}
+    \begin{definition}
+        Events: These typically refer to desired outcomes
+    \end{definition}
+    Typically when finding probability, we'll divide all possible outcomes from our desired outcomes. Thinking in terms of set notation, we'll refer to all of our desired outcomes as n(A), where A is our desired outcome. n(S) will refer to all of the possible outcomes, and P(A) referring to the likelihood of A occurring. To generalize, we'll use the equation below.
+    \begin{equation*}
+        P(A) = \frac{n(A)}{n(S)}
+    \end{equation*}
+    Since the number of desired outcomes will never be greater than the number of total outcomes, we'll always have a decimal between 0 (0\%) and 1 (100\%), which we can convert to a percentage (ex. $\frac{1}{4}=0.25=25\%$), though typically we'll simply leave it as a reduced version of the fraction.
+    
+    \subsection{Mutually Exclusive Events and Non-Mutually Exclusive Events}
+    Mutually Exclusive events are events that have zero overlap with other events. Recall the Venn Diagram of Sets in The Combinations section. Assume A and B are both events. To find the probability of either of them happening, we'll have to remember the equation:
+    \begin{equation*}
+        n(A\cup B) = n(A) + n(B)
+    \end{equation*}
+    This equation finds all the ways A or B can happen, with zero overlap. The problem with this equation is that it only finds the number of wanted outcomes. Remember, to find the probability of something, we find the wanted outcomes, and divide it by all of the possible outcomes. After this, our equation will look like this:
+    \begin{equation*}
+        \frac{n(A \cup B)}{n(S)} = \frac{n(A) + n(B)}{n(S)}
+    \end{equation*}
+    Which reduces to:
+    \begin{equation*}
+        P(A\cup B) = P(A) + P(B)
+    \end{equation*}
+    For non-mutually exclusive events, we must instead use a different equation, more accurate to the one we've discussed in the Sets Unit. Following the same logic we used earlier, our equation works out to:
+    \begin{equation*}
+        P(A\cup B) = P(A) + P(B) - P(A\cap B)
+    \end{equation*}
+    Where $P(A\cap B)$ equals the probability of both of those events occurring.
+
+    \subsection{Independent Probability}
+    When two events occur at the same time, or one after another with no effect on each other, they are called Independent Events. If you roll a die, then select a card, this would be independent, as the outcomes don't affect each other. If you think of this in terms of sets once again. So solve an Independent Probability question, we have to find the probability of A and B, and to do that we'll use the equation below.
+    \begin{equation*}
+        P(A\cap B) = P(A) \cdot P(B)
+    \end{equation*}
     
     
+
 %% Appendix, containing extra practice questions, typically discussed in class, or questions that have been on tests as bonus, or other assorted challenging questions.
 \clearpage\appendix
 
