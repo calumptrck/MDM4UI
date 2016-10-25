@@ -10,15 +10,13 @@
 \usepackage{parcolumns}
 % The tikz package provides drawings for Combinations set notation (Venn Diagram).
 \usepackage{tikz}
+
 %% Removes the wonky "Preprint Submitted to Elsevier" and adds a front-page footer. 
 \makeatletter
 \def\ps@pprintTitle{%
  \let\@oddhead\@empty
  \let\@evenhead\@empty
- \def\@oddfoot{
-    \hspace*{\fill}
-    {Compiled by John Oss} \hfill {\thepage} \hfill{\@journal\today}
-    \hspace*{\fill}}%
+ \def\@oddfoot{\centerline{\thepage}}%
  \let\@evenfoot\@oddfoot}
 \makeatother
 
@@ -32,6 +30,8 @@
 %% Header
 \begin{frontmatter}
     \title{Exam Notes for MDM4UI}
+    \author{John Oss\\
+            \today}
     \begin{abstract}
         Notes for all topics taught in MDM4UI (Data Management) from the winter term of the 2016-2017 school year at GCI.  
         Please refer to the appendix for a walk-through of example questions that will probably be on the exam. 
@@ -496,7 +496,7 @@ or how many ways can you bring 4 people out of 20 friends to a party.
     If you roll a die, then select a card, this would be independent, as the outcomes don't affect each other.
     So solve an Independent Probability question we'll have to think in terms of sets, so the probability of A and B, can be solved with the equation below.
     \begin{equation*}
-        P(A\cap B) = P(A) \cdot P(B)
+        P(A\cap B) = P(A)\cdot P(B)
     \end{equation*}
         But what happens if we need to find the probability of $(A \mbox{ or } B)$?
         To find that we'll need to use another equation.
@@ -504,8 +504,78 @@ or how many ways can you bring 4 people out of 20 friends to a party.
         P(A\cup B) = P(A) + P(B) - P(A\cap B)
     \end{equation*}
     
+    \subsection{Markov Chains}
+    Markov Chains are ways of predicting probability after successive iterations.
+    Suppose that Product A has a 70\% chance of repurchasing, and Product B has a 70\% chance of repurchasing, how would we model this? We'd use a Markov Chain. Shown below is our probability matrix.
+    \begin{equation*}
+        P = 
+        \begin{bmatrix}
+            0.7 & 0.3\\
+            0.3 & 0.7
+        \end{bmatrix}
+    \end{equation*}
+    Now, we have to find the initial probability of something, which we call a \textbf{transition matrix}. We'll represent this in the form of how many people started buying A or B, (shown below). Since this is the initial time, we'll refer to it as $S_{0}$, though you may also hear it called a \textbf{probability vector}.
+    \begin{equation*}
+    S_{0} = 
+        \begin{bmatrix}
+            0.6 & 0.4
+        \end{bmatrix}
+    \end{equation*}
+    To find the next probability vector, or $S_{1}$, we'll have to multiply the transition matrix by the probability vector.
+    \begin{equation*}
+        \begin{bmatrix}
+            0.6 & 0.4
+        \end{bmatrix}
+        \cdot
+        \begin{bmatrix}
+            0.7 & 0.3\\
+            0.3 & 0.7
+        \end{bmatrix}
+        =
+        \begin{bmatrix}
+            0.54 & 0.46
+        \end{bmatrix}
+        = S_{1}
+    \end{equation*}
+    Much like rolling a die, the more times you repeat this process, the closer you are to the actual results. Though what if there was an easier way to do this?
     
-
+    \subsection{Steady State Vectors}
+    In Markov Chains, the probability vectors will eventually stop changing.
+    A probability vector that remains unchanged upon multiplication is called the \textbf{steady state vector}.
+    This vector will represent the long term trend of the event.
+    To find this without repeating the Markov Chain multiplication, we must think of the problem in terms of a system of equations.
+    \begin{equation*}
+        \begin{bmatrix}
+            a & b
+        \end{bmatrix}
+        \cdot
+        \begin{bmatrix}
+            0.7 & 0.3\\
+            0.3 & 0.7
+        \end{bmatrix}
+        =
+        \begin{bmatrix}
+            a & b
+        \end{bmatrix}
+    \end{equation*}
+    To have a systems of equations from this, we must first assert that $a + b = 1$, and find the other by multiplying for one of the values.
+    In this case, we can see that $0.7a + 0.3b = a$.
+    Now solve this systems of equations like you have done in Grade 9.
+    
+    \subsection{Odds}
+    Have you ever heard the (seemingly wrong) Roll Up The Rim odds?
+    They claim that 1 in 5 people are winners!
+    But what does this mean?
+    Odds are the degree of confidence that someone has that an event will occur.
+    To find the odds of something occurring, we must use the formula below.
+    \begin{equation*}
+        P(A) : P(A)' 
+    \end{equation*}
+    This equation represents a ratio of the probability of A happening, against the probability of A \textbf{not} happening. Likewise with the odds of something \textbf{not occurring}, we can use the reverse of this formula.
+    \begin{equation*}
+        P(A)' : P(A)
+    \end{equation*}
+    
 %% Appendix, containing extra practice questions, typically discussed in class, or questions that have been on tests as bonus, or other assorted challenging questions.
 \clearpage\appendix
 
