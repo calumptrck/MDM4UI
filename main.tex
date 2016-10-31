@@ -31,7 +31,9 @@
 \begin{frontmatter}
     \title{Exam Notes for MDM4UI}
     \author{John Oss\\
-            \today}
+            \today\\
+            \LaTeX}
+    
     \begin{abstract}
         Notes for all topics taught in MDM4UI (Data Management) from the winter term of the 2016-2017 school year at GCI.  
         Please refer to the appendix for a walk-through of example questions that will probably be on the exam. 
@@ -41,9 +43,11 @@
 
 %% Body 
 \section{Permutations}
-Permutations are the arrangements of objects in a set order. 
-For instance, how many ways can you rearrange the letters in the word "APPLE", 
-or how many ways can you bring 4 people out of 20 friends to a party.
+
+    \subsection{What are Permutations?}
+    Permutations are the arrangements of objects in a set order. 
+    For instance, how many ways can you rearrange the letters in the word "APPLE",
+    or how many ways can you bring 4 people out of 20 friends to a party.
 
     \subsection{Factorial Notation}
     Often in permutations, we need to multiply descending consecutive numbers.
@@ -61,18 +65,18 @@ or how many ways can you bring 4 people out of 20 friends to a party.
     Essentially, you have three groups of two, or $2\cdot3$ different results, which turns out to be $6$ different possible results.
     This is called the \emph{Fundamental Rule of Product} or the \emph{Counting Principle}
     \begin{definition}
-        The Rule of Product states that if the 1st action can be performed in n ways, and the 2nd action can be performed in m ways.
+        The Rule of Product states that if the $1^{st}$ action can be performed in n ways, and the $2^{nd}$ action can be performed in m ways.
         They can be performed together in $n\cdot m$ ways. 
     \end{definition}
     What happens if the actions cannot be performed together? Such as which car to buy? In that case we have another rule, known as the \emph{Rule of Sum}.
     \begin{definition}
-        The Rule of Sum states that if the 1st action can be performed in n ways, and the 2nd action can be performed in m ways, and these actions cannot occur together, then there are $n+m$ ways for either of the actions to occur.
+        The Rule of Sum states that if the $1^{st}$ action can be performed in n ways, and the $2^{nd}$ action can be performed in m ways, and these actions cannot occur together, then there are $n+m$ ways for either of the actions to occur.
     \end{definition}
     
     \subsection{N-Arrangements}
     Let's say you have 5 people, and you need to arrange them in a line.
     You put one person in the first spot, and now you have 4 left. Repeat this until you are left with one person, which fits into the last spot.
-    You can express this mathematically by writing out $5\cdot4\cdot3\cdot2\cdot1$ or $5$ factorial.\\
+    You can express this mathematically by writing out $5!$ .\\
     This is quite similar to the Rule of Product as:
     \begin{enumerate}
         \item Each placement is a choice
@@ -240,6 +244,11 @@ or how many ways can you bring 4 people out of 20 friends to a party.
     \begin{equation*}
         |A\cup B| = |A| + |B| - |A\cap B|
     \end{equation*}
+    What happens if we have have three events we need to find the union of though?
+    To do that, we'll follow the same principles, and use the equation below.
+    \begin{equation*}
+        |A\cup B\cup C| = |A| + |B| + |C| - |A\cap B| - |A\cap C| - |B\cap C| + |A\cap B\cap C|
+    \end{equation*}
     
 \section{Modelling with Matrices}
     
@@ -355,7 +364,6 @@ or how many ways can you bring 4 people out of 20 friends to a party.
                 (a+b)_{21} & (a+b)_{22} & (a+b)_{23}
             \end{bmatrix}
         \end{equation*}
-        
         They may also be multiplied by a coefficient, by multiplying the coefficient with every entry in the matrix.
         Shown below is a proper solution in which a matrix is multiplied by a coefficient, with entries labeled:
          \begin{equation*}
@@ -371,7 +379,7 @@ or how many ways can you bring 4 people out of 20 friends to a party.
             \end{bmatrix}
         \end{equation*}
         
-        \subsection{Multiplying Matrices Together}
+    \subsection{Multiplying Matrices Together}
         Matrices may also be multiplied with other matrices, yet to do so we must follow certain rules.
         Let's say we have Matrix A and Matrix B as shown below.
         To multiply, we need to make sure the \emph{inner dimensions} are the same.
@@ -423,7 +431,7 @@ or how many ways can you bring 4 people out of 20 friends to a party.
         If you want to do it just by eye, you can multiply $A_{11}$ by $B_{11}$, $A_{12}$ by $B_{21}$, and $A_{13}$ by $B_{31}$, and add them all up.
         It will seem totally awful at first, but after you do a couple it'll all work out fine.
         
-        \subsection{Identity Matrices}
+    \subsection{Identity Matrices}
         An Identity Matrix is a $n\cdot n$ size matrix in which every number along the main diagonal is a 1, and the rest are zeros.
         Shown below is Matrix I, a $3\cdot 3$ Identity Matrix.
         \begin{equation*}
@@ -439,11 +447,27 @@ or how many ways can you bring 4 people out of 20 friends to a party.
         \begin{equation*}
             A\cdot A^{-1} = I
         \end{equation*}
-        Its too bad we can't divide matrices, how can we ever solve for I now?
+        Its too bad we can't divide matrices, how can we ever solve for I now? Good thing we can use something called an Inverse Matrix.
         
-        \subsection{Finding Inverse Matrices}
+    \subsection{Finding Inverse Matrices}
         Finding the inverse of large matrices is one of the most mathematically intensive processes out there.
-        Good thing we'll only be finding the inverse of a $2\cdot2$ matrix instead.
+        Good thing we'll only be finding the inverse of a $2\cdot2$ matrix instead. To find the inverse of a $2\cdot 2$ matrix, we must use first define the matrices.
+        \begin{equation*}
+        A = 
+            \begin{bmatrix}
+                a & b\\
+                c & d
+            \end{bmatrix}
+        \end{equation*}
+        Now that we have the starting matrix, it is time to find the inverse. To find it, we must multiply the determinant, by the matrix, and swap several spots of numbers. Again, sounds odd, but we just need to follow the formula below.
+        \begin{equation*}
+        A^{-1} = \frac{1}{ad-bc}
+            \begin{bmatrix}
+                d & -b\\
+                -c & a
+            \end{bmatrix}
+        \end{equation*}
+        After this step, simply multiply the determinant into the matrix, and you have found $A^{-1}$!
 
 \section{Probability}
 
@@ -496,7 +520,7 @@ or how many ways can you bring 4 people out of 20 friends to a party.
     If you roll a die, then select a card, this would be independent, as the outcomes don't affect each other.
     So solve an Independent Probability question we'll have to think in terms of sets, so the probability of A and B, can be solved with the equation below.
     \begin{equation*}
-        P(A\cap B) = P(A)\cdot P(B)
+        P(A\cap B) = P(A) \cap(B)
     \end{equation*}
         But what happens if we need to find the probability of $(A \mbox{ or } B)$?
         To find that we'll need to use another equation.
@@ -575,14 +599,59 @@ or how many ways can you bring 4 people out of 20 friends to a party.
     \begin{equation*}
         P(A)' : P(A)
     \end{equation*}
+    What happens if we want to win a bet though? You've probably heard of betting odds before. To do that, we'll use the equation below, where X will equal the amount won.
+    \begin{equation*}
+        \frac{P(A)}{P(A)'} = \frac{\emph{Amount Bet}}{x}
+    \end{equation*}
+    After this, isolate X, which will give you the following equation.
+    \begin{equation*}
+        X = \emph{Amount Bet}\cdot\frac{P(A)'}{P(A)}
+    \end{equation*}
+
+\section{Probability Distributions}
+
+    \subsection{What is a probability distribution?}
+    A probability distribution is a method of displaying data that displays the probabilities of every possible outcome. We'll need to define a few types of distributions first though, which are uniform and non-uniform distributions.
+    \begin{definition}
+        Uniform Distribution: A distribution is called uniform when all of the outcomes are equally likely, just like a single die roll.
+    \end{definition}
+    \begin{definition}
+        Non-Uniform Distribution: A distribution is called non-uniform when not all of the outcomes are equally likely, just like rolling the sum of a pair of dice.
+    \end{definition}
+    The variable we measure when calculating these, is called the random variable, and is denoted as $X$. The various possibilities for $X$ are the outcomes, denoted $x$. We'll typically find the probability distributions that rely on two different types of variables: discrete and continuous variables. 
+    \begin{definition}
+        Discrete Variables: These are values that are typically separate from each other, and have a finite number of possibilities.
+    \end{definition}
+    \begin{definition}
+        Continuous Variables: These are values that have an infinite number of possibilities, such as a length of time.
+    \end{definition}
     
+    \subsection{Sigma Notation}
+    Sigma Notation, or $\sum_{}^{}$, may look terrifying, but it simply means the sum of a lot of numbers. We use this when finding an expected value of something, which we'll denote as $E(x)$. To find this, we'll use the equation below.
+    \begin{equation*}
+        E(x) = \sum_{i=1}^{n}x_{i}P(x_{i})
+    \end{equation*}
+    To break it down, the $i=1$ is the start, the $n$ is the stop, {$x_{i}$ is the outcome, and $P(x_{i})$ is the possibility of that outcome.
+    To show this in action, let's suppose that in a game, you'll get the amount of points you'll roll on a die.
+    To find that, we'll need to use find $E(x)$.
+    We know that the probability of rolling each number is $\frac{1}{6}$, and we know all the outcomes, so let's fill out the equation. First, we'll need to set our limits though.
+    \begin{equation*}
+        E(x) = \sum_{i=1}^{6}
+    \end{equation*}
+    This means that we must repeat the $x_{i}P(x_{i})$ starting at one, going to six, which would be six times. Now we'll expand that below.
+    \begin{equation*}
+        E(x) = 1(\frac{1}{6}) + 2(\frac{1}{6}) + 3(\frac{1}{6}) + 4(\frac{1}{6}) + 5(\frac{1}{6}) + 6(\frac{1}{6})
+    \end{equation*}
+    We can also simplify this, as we know it is a uniform distribution. Shown below is the updated equation for this uniform distribution.
+    \begin{equation*}
+        E(x) = \frac{1}{6}(1 + 2 + 3 + 4 + 5 + 6)
+    \end{equation*}
+\end{document}
+
 %% Appendix, containing extra practice questions, typically discussed in class, or questions that have been on tests as bonus, or other assorted challenging questions.
 \clearpage\appendix
 
 %% Currently commented out as it is horribly neglected.
 %% \include{examples}
-
-\end{document}
-
 %%
 %% EOF
