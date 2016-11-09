@@ -4,4 +4,4 @@ This project includes all of the notes from my MDM4UI course at GCI during the w
 
 Everything is written in LaTeX, compiled to a PDF named MDM4UI.pdf.
 
-by Calum Patrick 
+by Calum Patrick not John Oss even though it says John Oss in the pdf.
